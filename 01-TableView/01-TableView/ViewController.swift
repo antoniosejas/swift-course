@@ -11,7 +11,24 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    let people = ["Ginger", "Rosane", "Paul", "Zac"]
+    let people = [
+        [
+            "name":"Ginger",
+            "subtitle":"CTO"
+        ],
+        [
+            "name":"Rosane",
+            "subtitle":"CEO"
+        ],
+        [
+            "name":"Paul",
+            "subtitle":"CMO"
+        ],
+        [
+            "name":"Zac",
+            "subtitle":"ENGINEER"
+        ]
+    ]
     var selected = -1
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.backgroundColor = UIColor.yellowColor()
-        cell.textLabel!.text = self.people[indexPath.row]
+        cell.textLabel!.text = self.people[indexPath.row]["name"]
         return cell
     }
     
@@ -39,7 +56,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detailViewController = segue.destinationViewController as! DetailViewController
-        detailViewController.name = self.people[self.selected]
+        detailViewController.name = self.people[self.selected]["name"]!
+        detailViewController.subtitle = self.people[self.selected]["subtitle"]!
     }
 }
 
