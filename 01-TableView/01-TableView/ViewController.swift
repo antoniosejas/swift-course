@@ -30,5 +30,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel!.text = self.people[indexPath.row]
         return cell
     }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("toDetailSegue", sender: self)
+    }
 }
 
