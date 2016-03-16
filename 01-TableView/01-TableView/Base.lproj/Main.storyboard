@@ -69,15 +69,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFd-fc-vQx">
-                                <rect key="frame" x="270" y="202.5" width="61" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zi4-cL-09b">
                                 <rect key="frame" x="262" y="114" width="77.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFd-fc-vQx">
+                                <rect key="frame" x="270" y="202" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -90,6 +90,10 @@
                             <constraint firstItem="dFd-fc-vQx" firstAttribute="centerX" secondItem="7f0-yb-Plo" secondAttribute="centerX" id="yUO-pt-bUb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblName" destination="Zi4-cL-09b" id="mMq-Bb-9tm"/>
+                        <outlet property="lblSubtitle" destination="dFd-fc-vQx" id="rZA-UE-KkF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uug-nu-qcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
