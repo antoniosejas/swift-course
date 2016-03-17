@@ -15,16 +15,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var imgPhoto: UIImageView!
     
-    var name = ""
-    var subtitle = ""
-    var email = ""
+    var person:Person = Person()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lblName.text = self.name
-        self.lblSubtitle.text = self.subtitle
-        self.lblEmail.text = self.email
+        self.lblName.text = self.person.name
+        self.lblSubtitle.text = self.person.subtitle
+        self.lblEmail.text = self.person.email
     }
 
 }

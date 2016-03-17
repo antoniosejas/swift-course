@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             "email": "zac@email.com"
         ]
     ]
-    var selected = -1
+    var person = Person()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,23 +54,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
+        let cell = UITableViewCell()
         cell.textLabel!.text = self.people[indexPath.row]["name"]!
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.selected = indexPath.row
-        self.performSegueWithIdentifier("toDetailSegue", sender: nil)
+        self.person.name = self.people[indexPath.row]["name"]!
+        self.person.subtitle = self.people[indexPath.row]["subtitle"]!
+        self.person.email = self.people[indexPath.row]["email"]!
+        self.performSegueWithIdentifier("toDetailSegue", sender: person)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detail = segue.destinationViewController as! DetailViewController
-        detail.name = self.people[selected]["name"]!
-        detail.subtitle = self.people[selected]["subtitle"]!
-        detail.email = self.people[selected]["email"]!
-        
+        detail.person = sender as! Person
     }
     
 }
