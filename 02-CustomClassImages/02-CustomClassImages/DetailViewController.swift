@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
         self.lblName.text = self.person.name
         self.lblSubtitle.text = self.person.subtitle
         self.lblEmail.text = self.person.email
+        self.imgPhoto.image = self.person.photo
     }
 
 }

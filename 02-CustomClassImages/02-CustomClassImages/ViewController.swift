@@ -54,14 +54,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             person.name = personDictionary["name"]!
             person.subtitle = personDictionary["subtitle"]!
             person.email = personDictionary["email"]!
+            //We don't need to add the jpg extension
+            person.photo = UIImage(named: personDictionary["name"]!.lowercaseString)!
             people.append(person)
         }
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
