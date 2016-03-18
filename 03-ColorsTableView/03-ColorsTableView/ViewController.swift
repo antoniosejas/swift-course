@@ -56,13 +56,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegueWithIdentifier("toColorDetail", sender: self.colors[indexPath.row])
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let detailVC = segue.destinationViewController as! ColorDetailViewController
-        if let color = sender!["code"] {
-            detailVC.color = color as! UIColor
-        }
-        if let name = sender!["name"] {
-            NSLog("name: \(name)")
-            detailVC.stringTitle = name as! String
+        if("toColorDetail" == segue.identifier){
+            let detailVC = segue.destinationViewController as! ColorDetailViewController
+            if let color = sender!["code"] {
+                detailVC.color = color as! UIColor
+            }
+            if let name = sender!["name"] {
+                NSLog("name: \(name)")
+                detailVC.stringTitle = name as! String
+            }
         }
     }
 }
